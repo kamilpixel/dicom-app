@@ -1,9 +1,9 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: 'spa',
+  target: 'static',
 
   router: {
-    base: '/dicom-app/'
+    base: (process.env.NODE_ENV === 'production') ? '/dicom-app/' : '/',
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -57,6 +57,10 @@ export default {
     '@nuxtjs/axios',
     '@nuxtjs/dayjs',
   ],
+
+  axios: {
+    baseURL: (process.env.NODE_ENV === 'production') ? '/dicom-app/' : '/',
+  },
 
   bootstrapVue: {
     bootstrapCSS: false, // Or `css: false`

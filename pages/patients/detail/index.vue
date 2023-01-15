@@ -45,7 +45,7 @@
               </b-col>
             </b-row>
             <div>
-              <b-img src="/images/sample.jpg" fluid alt="Sample image"></b-img>
+              <b-img :src="setSampleImage" fluid alt="Sample image"></b-img>
             </div>
           </div>
         </b-card>
@@ -105,6 +105,9 @@ export default {
     },
     disabledNext(){
       return (this.currentIndex === this.patients.length-1 || this.isLoading);
+    },
+    setSampleImage(){
+      return (process.env.NODE_ENV === 'production') ? '/dicom-app/images/sample.jpg' : '/images/sample.jpg';
     },
   },
   methods: {
