@@ -2,12 +2,13 @@
 
 ## Online preview
 https://kamilpixel.github.io/dicom-app
-Note: data serve using json due to static server hosting
+
+Note: data serve using local `json` file due to static server hosting
 
 ## Requirement to run in local
-Please install node and yarn in local
-node v16.17.1
-yarn v1.22.19
+Please install `node` and `yarn` in local
+- node v16.17.1
+- yarn v1.22.19
 
 ## Setup in local
 
