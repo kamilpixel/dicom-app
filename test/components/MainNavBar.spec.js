@@ -7,7 +7,16 @@ localVue.use(BootstrapVue);
 
 describe('MainNavBar component', () => {
   it('render MainNavBar component', () => {
-    const wrapper = shallowMount(MainNavBar, { localVue });
+    const wrapper = shallowMount(MainNavBar, { 
+      localVue,
+      mocks: {
+        $router: {
+          options: {
+            base: '/',
+          },
+        },
+      } 
+    });
     expect(wrapper.exists()).toBe(true);
   });
 });
